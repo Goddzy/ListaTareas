@@ -12,8 +12,15 @@ const FormularioTarea = () => {
     //se utiliza en cambio un spread (...), que hace una copia original y agrega en la última posición lo que quiero. En este caso guarda todo lo que está en arregloTareas, y al final agrega "tarea".
     setArregloTareas([...arregloTareas, tarea]);
     //limpiar el input
-    setTarea('');
+    setTarea("");
   }
+
+  function borrarTarea(nombre){
+    let arregloModificado = arregloTareas.filter((item)=> item !== nombre);
+    //actualizar el state
+    setArregloTareas(arregloModificado);
+  }
+
 
   return (
     <>
@@ -30,7 +37,7 @@ const FormularioTarea = () => {
           </Button>
         </Form.Group>
       </Form>
-      <ListaTarea arregloTareas={arregloTareas} ></ListaTarea>
+      <ListaTarea arregloTareas={arregloTareas} borrarTarea={borrarTarea}></ListaTarea>
     </>
   );
 };
