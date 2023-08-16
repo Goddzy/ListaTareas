@@ -1,6 +1,6 @@
 import { Button, ListGroup } from "react-bootstrap";
 
-const ItemTarea = ({nombreTarea, borrarTarea}) => {
+const ItemTarea = ({ nombreTarea, borrarTarea }) => {
   return (
     <div>
       <ListGroup.Item className="d-flex justify-content-between rounded">
